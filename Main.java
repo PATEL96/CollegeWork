@@ -39,16 +39,18 @@ class Main{
         //Searching Through the List
 
         do{
+            System.out.println();
             System.out.print("Which Student You want to Find: ");
             find = read.nextInt();
             System.out.println();
             List[find-1].displayDetails(find-1);
+            System.out.println();
         }
-        while(find<amount);
+        while(find!=amount+1);
 
         //Searching Through the List
 
-        
+
         // Bank Patel = new Bank();
         // int Option;
         // Scanner read = new Scanner(System.in);
