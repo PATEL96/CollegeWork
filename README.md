@@ -1,12 +1,12 @@
 # CollegeWork
 Example for Classes And Objects IN Java/C++.\
-Download Any file with Extension '.java' or '.cpp'.\
+Download Any file with Extension '.java' or '.cpp'.
 
-##Scripts\
+## Scripts
 To run Java on your Machine\
-###Mac os \
+### Mac os \
 `javac <filename.java> && java <filename>`\
-###Windows\
+### Windows\
 `javac <filename.java> && java <filename>`\
-###Linux\
+### Linux\
 `javac <filename.java> && java <filename>`\
