@@ -7,13 +7,13 @@ Download Any file with Extension '.java' or '.cpp'.
 ### Java Terminal & Command Prompt Codes
 
 #### Mac Os
-`javac <filename.java> && java <filename>`
+`javac <filename>.java && java <filename>`
 
 #### Windows
-`javac <filename.java> && java <filename>`
+`javac <filename>.java && java <filename>`
 
 #### Linux
-`javac <filename.java> && java <filename>`
+`javac <filename>.java && java <filename>`
 
 ### C++ Terminal & Command Prompt Codes
 
