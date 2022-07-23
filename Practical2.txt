@@ -1,0 +1,70 @@
+create table Supplier( Supplier_no integer primary key, Name varchar(20), Address varchar(20) );
+insert into Supplier values(1001, 'Michael', 'Basildon');
+insert into Supplier values(1002, 'Ringworld', 'Germany');
+insert into Supplier values(1003, 'Babylon', 'London');
+insert into Supplier values(1004, 'John', 'Basildon');
+insert into Supplier values(1005, 'Smith', 'Germany');
+insert into Supplier values(1006, 'Peter', 'London');
+Select * from Supplier;
+Select * from Supplier where Supplier_no = 1002 or Supplier_no = 1003;
+
+
+
+create table Product( Product_no integer primary key, 
+                    Description varchar(20), Price integer,Supplier_no integer,
+                    FOREIGN KEY (Supplier_no) REFERENCES Supplier(Supplier_no),
+                    Marketing_rep_no integer, Supply_depot_no integer );
+
+insert into Product values( 121, 'Reducer', 1200, 1005, 5, 6);
+insert into Product values( 122, 'Plate', 1500, 1004, 3, 1);
+insert into Product values( 123, 'Handle', 700, 1003, 2, 4);
+insert into Product values( 124, 'Widget Remover', 900, 1005, 4, 2);
+insert into Product values( 125, 'Size Widget', 1000, 1001, 1, 5);
+insert into Product values( 126, 'Size Widget', 15000, 1002, 2, 16);
+
+Select * from Product;
+
+update Product set Product_no = 136 where Supplier_no = 1001;
+update Product set Product_no = 137 where Supplier_no = 1002;
+
+Alter table Product add FOREIGN KEY (Supplier_no) REFERENCES Supplier(Supplier_no);
+drop table Product;
+
+create table SalesRep(Rep_no integer primary key, Name varchar(20));
+
+insert into SalesRep values(1, 'Mike');
+insert into SalesRep values(2, 'Fred');
+insert into SalesRep values(3, 'Ali');
+insert into SalesRep values(4, 'Sam');
+insert into SalesRep values(5, 'Bill Adams');
+insert into SalesRep values(6, 'Sam');
+
+Select * from SalesRep;
+Delete from SalesRep where Rep_no = 6;
+drop table SalesRep;
+
+create table Depot(Depot_no integer primary key, Location varchar(20), 
+                    Address varchar(20), Rep_no integer,
+                    FOREIGN KEY (Rep_no) REFERENCES SalesRep(Rep_no) );
+
+insert into Depot values(1, 'North', 'UK', 1 );
+insert into Depot values(2, 'South', 'USA', 2 );
+insert into Depot values(3, 'London West', 'USA', 3 );
+insert into Depot values(4, 'East', 'NZ', 4 );
+insert into Depot values(5, 'Wales', 'UK', 5 );
+insert into Depot values(6, 'North', 'Kenya', 6 );
+insert into Depot values(16, 'South', 'UK', 2 );
+
+Select * from Depot;
+
+create table Customer(Custumor_no integer primary key, Name varchar(20),
+                     Address varchar(20), Depot_no integer, Credit_Limit integer,
+                     Foreign key (Depot_no) References Depot(Depot_no));
+
+insert into Custumor values(10,'Garry Smith', 'Brixton', 6, 1000);
+insert into Custumor values(20,'Garry Smith', 'Brixton', 6, 1000);
+insert into Custumor values(30,'Garry Smith', 'Brixton', 6, 1000);
+insert into Custumor values(40,'Garry Smith', 'Brixton', 6, 1000);
+insert into Custumor values(50,'Garry Smith', 'Brixton', 6, 1000);
+insert into Custumor values(60,'Garry Smith', 'Brixton', 6, 1000);
+insert into Custumor values(70,'Garry Smith', 'Brixton', 6, 1000);
