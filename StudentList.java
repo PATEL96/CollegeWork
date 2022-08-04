@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Main{
+class StudentList{
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
         int amount, find;
@@ -40,41 +40,14 @@ class Main{
 
         do{
             System.out.println();
-            System.out.print("Which Student You want to Find: ");
+            System.out.print("Which Student You want to Find From(1 - " + amount + "): ");
             find = read.nextInt();
             System.out.println();
             List[find-1].displayDetails(find-1);
-            System.out.println();
+            System.out.println("To exit: Enter No. Greater Than " + amount +" or Press ctrl+C");
         }
         while(find!=amount+1);
 
         //Searching Through the List
-
-
-        // Bank Patel = new Bank();
-        // int Option;
-        // Scanner read = new Scanner(System.in);
-
-        // System.out.println("Select any one option");
-        // System.out.println("(1) ==> Account Details");
-        // System.out.println("(2) ==> Cash Withdrawal");
-        // System.out.println("(3) ==> Cash Deposite");
-
-        // Option = read.nextInt();
-
-        // switch(Option){
-        //     case 1:
-        //         Patel.AccountDetails();
-        //         break;
-        //     case 2:
-        //         Patel.Withdrawal();
-        //         break;
-        //     case 3:
-        //         Patel.Deposite();
-        //         break;
-        //     default:
-        //         System.out.print("Please Select From above Option!");
-        //         break;
-        // }
     }
 }

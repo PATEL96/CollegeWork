@@ -1,70 +1,84 @@
-create table Supplier( Supplier_no integer primary key, Name varchar(20), Address varchar(20) );
-insert into Supplier values(1001, 'Michael', 'Basildon');
-insert into Supplier values(1002, 'Ringworld', 'Germany');
-insert into Supplier values(1003, 'Babylon', 'London');
-insert into Supplier values(1004, 'John', 'Basildon');
-insert into Supplier values(1005, 'Smith', 'Germany');
-insert into Supplier values(1006, 'Peter', 'London');
-Select * from Supplier;
-Select * from Supplier where Supplier_no = 1002 or Supplier_no = 1003;
+create table Supplier(Supplier_No int primary key, Name varchar(20), Address varchar(20));
+desc Supplier;
+insert into Supplier values (1001,'MICHAEL','BASILDON');
+insert into Supplier values (1002 ,'RINGWORLD', 'GERMANY');
+insert into Supplier values (1003, 'BABYLON', 'LONDON');
+insert into Supplier values (1004, 'JOHN', 'BASILDON');
+insert into Supplier values (1005, 'SMITH', 'GERMANY');
+insert into Supplier values (1006, 'PETER', 'LONDON');
+select * from Supplier;
 
+create table SalesRep(Rep_No int primary key, Name varchar(20));
+desc SalesRep;
+insert into SalesRep values (1, 'MIKE');
+insert into SalesRep values (2, 'FRED');
+insert into SalesRep values (3, 'ALI');
+insert into SalesRep values (4, 'SAM');
+insert into SalesRep values (5, 'BILL ADAMS');
+insert into SalesRep values (6, 'SAM');
+select * from SalesRep;
 
+create table Depot(Depot_No int primary key, Location varchar(20), Address varchar(20), Rep_no int references SalesRep(Rep_No));
+desc Depot;
+insert into Depot values (1, 'NORTH', 'UK', 1);
+insert into Depot values (2, 'SOUTH', 'USA', 2);
+insert into Depot values (3, 'LONDON WEST', 'USA', 3);
+insert into Depot values (4, 'EAST', 'NZ', 4);
+insert into Depot values (5, 'WALES', 'UK', 5);
+insert into Depot values (6, 'NORTH', 'KENYA', 6);
+insert into Depot values (16, 'SOUTH', 'UK', 2);
+select * from Depot;
 
-create table Product( Product_no integer primary key, 
-                    Description varchar(20), Price integer,Supplier_no integer,
-                    FOREIGN KEY (Supplier_no) REFERENCES Supplier(Supplier_no),
-                    Marketing_rep_no integer, Supply_depot_no integer );
+create table Product(Product_No int primary key, Description varchar(20), Price int, Supplier_No int References Supplier(Supplier_No), Marketing_Rep_No int References SalesRep(Rep_No), Supply_Depot_No int References Depot(Depot_No));
+desc Product;
+insert into Product values (121, 'REDUCER', 1200, 1005, 5, 6);
+insert into Product values (122, 'PLATE', 1500, 1004, 3, 1);
+insert into Product values (123, 'HANDLE', 700, 1003, 2, 4);
+insert into Product values (124, 'WIDGET REMOVER', 900, 1005, 4, 2);
+insert into Product values (136, 'SIZE WIDGET', 1000, 1001, 1, 5);
+insert into Product values (137, 'SIZE WIDGET', 15000, 1002, 2, 16);
+select * from Product;
 
-insert into Product values( 121, 'Reducer', 1200, 1005, 5, 6);
-insert into Product values( 122, 'Plate', 1500, 1004, 3, 1);
-insert into Product values( 123, 'Handle', 700, 1003, 2, 4);
-insert into Product values( 124, 'Widget Remover', 900, 1005, 4, 2);
-insert into Product values( 125, 'Size Widget', 1000, 1001, 1, 5);
-insert into Product values( 126, 'Size Widget', 15000, 1002, 2, 16);
+create table Customer(Customer_No int Primary key, Name varchar(20), Address varchar(20), Depot_No int References Depot(Depot_No), Credit_Limit int);
+desc Customer;
+insert into Customer values (10, 'GARRY SMITH', 'BRIXTON', 6, 1000);
+insert into Customer values (20, 'PATEL', 'GRANGE', 1, 4000);
+insert into Customer values (30, 'DRAKE', 'BRIXTON', 4, 7000);
+insert into Customer values (40, 'BOB SMITH', 'LONDON', 2, 10000);
+insert into Customer values (50, 'JAMES', 'GRANGE', 3, 5000);
+insert into Customer values (60, 'NORTON', 'SAN FRANSISCO', 5, 17000);
+insert into Customer values (70, 'JOHN MICHAEL', 'EUROPE', 16, 8000);
 
-Select * from Product;
+create table Corder(Corder_No int Primary key, Customer_No References Customer(Customer_No), Date_Placed date, Date_Delivered date);
+desc Corder;
+insert into Corder values (200, 20, to_date('01-JAN-1993','dd-MON-yyyy'), to_date('04-JAN-1993','dd-MON-yyyy'));
+insert into Corder values (201, 40, to_date('17-JAN-1993','dd-MON-yyyy'), to_date('20-JAN-1993','dd-MON-yyyy'));
+insert into Corder values (202, 20, to_date('01-JAN-1993','dd-MON-yyyy'), to_date('04-JAN-1993','dd-MON-yyyy'));
+insert into Corder values (203, 30, to_date('02-FEB-1995','dd-MON-yyyy'), to_date('05-FEB-1995','dd-MON-yyyy'));
+insert into Corder values (204, 10, to_date('13-MAR-1996','dd-MON-yyyy'), to_date('16-MAR-1996','dd-MON-yyyy'));
+insert into Corder values (205, 70, to_date('31-JAN-1993','dd-MON-yyyy'), to_date('03-FEB-1993','dd-MON-yyyy'));
+insert into Corder values (206, 40, to_date('01-JAN-1993','dd-MON-yyyy'), to_date('04-JAN-1993','dd-MON-yyyy'));
+insert into Corder values (207, 20, to_date('02-AUG-1994','dd-MON-yyyy'), to_date('05-AUG-1994','dd-MON-yyyy'));
+select * from Corder;
 
-update Product set Product_no = 136 where Supplier_no = 1001;
-update Product set Product_no = 137 where Supplier_no = 1002;
+create table Oline(Corder_No int References Corder(Corder_No), Product_No int References Product(Product_No), Quantity int);
+desc Oline;
+insert into Oline values (200, 123, 5);
+insert into Oline values (201, 121, 10);
+insert into Oline values (202, 123, 5);
+insert into Oline values (203, 122, 20);
+insert into Oline values (204, 136, 30);
+insert into Oline values (205, 124, 15);
+insert into Oline values (206, 136, 30);
+select * from Oline;
 
-Alter table Product add FOREIGN KEY (Supplier_no) REFERENCES Supplier(Supplier_no);
-drop table Product;
-
-create table SalesRep(Rep_no integer primary key, Name varchar(20));
-
-insert into SalesRep values(1, 'Mike');
-insert into SalesRep values(2, 'Fred');
-insert into SalesRep values(3, 'Ali');
-insert into SalesRep values(4, 'Sam');
-insert into SalesRep values(5, 'Bill Adams');
-insert into SalesRep values(6, 'Sam');
-
-Select * from SalesRep;
-Delete from SalesRep where Rep_no = 6;
-drop table SalesRep;
-
-create table Depot(Depot_no integer primary key, Location varchar(20), 
-                    Address varchar(20), Rep_no integer,
-                    FOREIGN KEY (Rep_no) REFERENCES SalesRep(Rep_no) );
-
-insert into Depot values(1, 'North', 'UK', 1 );
-insert into Depot values(2, 'South', 'USA', 2 );
-insert into Depot values(3, 'London West', 'USA', 3 );
-insert into Depot values(4, 'East', 'NZ', 4 );
-insert into Depot values(5, 'Wales', 'UK', 5 );
-insert into Depot values(6, 'North', 'Kenya', 6 );
-insert into Depot values(16, 'South', 'UK', 2 );
-
-Select * from Depot;
-
-create table Customer(Custumor_no integer primary key, Name varchar(20),
-                     Address varchar(20), Depot_no integer, Credit_Limit integer,
-                     Foreign key (Depot_no) References Depot(Depot_no));
-
-insert into Custumor values(10,'Garry Smith', 'Brixton', 6, 1000);
-insert into Custumor values(20,'Garry Smith', 'Brixton', 6, 1000);
-insert into Custumor values(30,'Garry Smith', 'Brixton', 6, 1000);
-insert into Custumor values(40,'Garry Smith', 'Brixton', 6, 1000);
-insert into Custumor values(50,'Garry Smith', 'Brixton', 6, 1000);
-insert into Custumor values(60,'Garry Smith', 'Brixton', 6, 1000);
-insert into Custumor values(70,'Garry Smith', 'Brixton', 6, 1000);
+create table Stock(Depot_No int References Depot(Depot_No), Product_No int References Product(Product_No), Quantity int, Rack_No int, Bin_No int);
+desc Stock;
+insert into Stock values (1, 123, 50, 1, 1);
+insert into Stock values (2, 137, 100, 10, 2);
+insert into Stock values (3, 136, 40, 2, 3);
+insert into Stock values (4, 123, 60, 7, 1);
+insert into Stock values (5, 121, 90, 5, 4);
+insert into Stock values (6, 124, 120, 4, 7);
+insert into Stock values (16, 122, 80, 10, 8);
+select * from Stock;
