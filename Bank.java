@@ -1,31 +1,29 @@
 import java.util.Scanner;
 
 class Bank{
-    String Name[] = new String[10];
+    String Name;
     float Acc_No[] = new float[10];
-    float Balance[] = new float[10];
+    float Balance;
+    Scanner read = new Scanner(System.in);
 
-    public void getDetaila(int n, String Name, float Acc_No, float Balance){
-        this.Name[n] = Name;
-        this.Acc_No[n] = Acc_No;
-        this.Balance[n] = Balance;
+    public void getDetails(int n){
+        System.out.println("Enter Details for " + (n+1) + " Account");
+        System.out.print("Name: ");
+        this.Name = read.nextLine();
+        System.out.print("Account Number: ");
+        this.Acc_No[n] = read.nextFloat();
+        System.out.print("Account Balance: ");
+        this.Balance = read.nextFloat();
     }
 
-    public void displayBalance(int n, float Acc_No){
-        if(this.Acc_No[n]==Acc_No){
-            System.out.println("Balance: " + this.Balance[n]);
-        } else {
-            System.out.println("Account Does not Exsist!!");
-        }
+    public void displayBalance(){
+        System.out.println("Balance: " + this.Balance);
     }
 
-    public void searchAccounct(int n, float Acc_No){
-        if(this.Acc_No[n]==Acc_No){
-            System.out.println("Name: " + this.Name[n]);
-            System.out.println("Account Number: " + this.Acc_No[n]);
-            System.out.println("Account Balance: " + this.Balance[n]);
-        } else {
-            System.out.println("Account Does not Exsist!!");
-        }
+    public void searchAccounct(int n){
+                System.out.println("Name: " + this.Name);
+                System.out.println("Account Number: " + this.Acc_No[n]);
+                System.out.println("Account Balance: " + this.Balance);
+        
     }
 } 
