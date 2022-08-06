@@ -21,9 +21,9 @@ class Bank{
     }
 
     public void searchAccounct(int n){
-                System.out.println("Name: " + this.Name);
-                System.out.println("Account Number: " + this.Acc_No[n]);
-                System.out.println("Account Balance: " + this.Balance);
+        System.out.println("Name: " + this.Name);
+        System.out.println("Account Number: " + this.Acc_No[n]);
+        System.out.println("Account Balance: " + this.Balance);
         
     }
 } 
