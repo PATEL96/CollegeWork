@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Descending{
+class OOPJPractical6{
     public static void main(String []args){
         Scanner read = new Scanner(System.in);
         int n;

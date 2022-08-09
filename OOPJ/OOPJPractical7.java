@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class StudentList{
+class OOPJPractical7{
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
         int amount, find;
@@ -20,17 +20,18 @@ class StudentList{
                 List[i] = new Student();
             }
             for(int k = 0;k<1;k++){
-                String Name, Address;
+                String Name;
+                float Contact;
                 int Enrollment;
                 System.out.println();
                 System.out.print("Name of Student "+ (i+1) +": ");
                 Name = read.next();
-                System.out.print("Address of Student "+ (i+1) +": ");
-                Address = read.next();
+                System.out.print("Contact of Student "+ (i+1) +": ");
+                Contact = read.nextFloat();
                 System.out.print("Enrollment of Student "+ (i+1) +": ");
                 Enrollment = read.nextInt();
                 System.out.println();
-                List[i].getDetails(i, Name, Address, Enrollment);
+                List[i].getDetails(i, Name, Contact, Enrollment);
             }
         }
 

@@ -1,0 +1,24 @@
+--1
+Update Product set Price = 2000 where Description = 'PLATE';
+--2
+Update Customer set Credit_Limit = 8000 where Address = 'GRANGE';
+--3
+Alter table Customer Modify Address varchar(30);
+--4
+create table Cust1(Customer_No, Name, Address) As select Customer_No, Name, Address from Customer;
+--5
+Alter table Cust1 Add Email_Id varchar(20);
+--6
+desc Cust1;
+--7
+select * from Cust1;
+--8
+Delete from Cust1 where Customer_No = 20;
+--9
+Alter table Cust1 drop column Email_Id;
+--10
+Delete from Cust1;
+select * from Cust1;
+--11
+Drop table Cust1;
+select * from Cust1;

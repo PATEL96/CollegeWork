@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-class Amstrong{
-	static int power(int base, int exponent){
+class OOPJPractical3{
+    static int power(int base, int exponent){
 		int power = 1;
 		
 		for(int i = 1; i<=exponent;i++){
