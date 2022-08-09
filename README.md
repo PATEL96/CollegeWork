@@ -7,6 +7,8 @@ Download Any file with Extension '.java' or '.cpp'.
 
 ### All the Classes are kept Seperately for Your Convinience.
 
+### For DBMS(Database Management System) Copy code from `.txt` files.
+
 ### Thanks!!
 
 #
@@ -26,6 +28,8 @@ Download Any file with Extension '.java' or '.cpp'.
 #### Linux
 
 `javac <filename>.java && java <filename>`
+
+#
 
 ### C++ Terminal & Command Prompt Codes
 
