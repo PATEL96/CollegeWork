@@ -1,13 +1,13 @@
 # CollegeWork
 
-Example for Classes And Objects IN Java/C++.\
-Download Any file with Extension '.java' or '.cpp'.
+Example for Classes And Objects IN `Java`/`C++`.\
+Download Any file with Extension `.java` or `.cpp`.
 
 ## Note!!
 
 ### All the Classes are kept Seperately for Your Convinience.
 
-### For DBMS(Database Management System) Copy code from `.txt` files.
+### For DBMS `Database Management System` Copy code from `.txt` files.
 
 ### Thanks!!
 
