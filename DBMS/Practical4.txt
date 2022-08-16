@@ -1,0 +1,20 @@
+--1
+SELECT SYSTIMESTAMP FROM DUAL;
+--2
+select * from tab;
+--3
+select Customer_No, Name from Customer;
+--4
+select * from Product where Product_No = 121 or Product_No = 136;
+--5
+select * from Depot where Rep_No = 5;
+--6
+select Product_No, Description from Product where Supplier_No = 1005;
+--7
+select * from Customer where Name like '%SM_T%';
+--8
+select * from Corder where Date_Placed between 'JAN-01-1993' and 'JAN-31-1993';
+--9
+select Rep_No, Depot_No, Address from Depot where Location = 'NORTH' and Address = 'UK';
+--10
+select Description, Price + (Price*0.1) as NewPrice from Product;
