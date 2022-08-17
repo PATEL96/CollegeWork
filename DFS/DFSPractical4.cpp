@@ -13,6 +13,8 @@ int main(){
         cin>>a[i];
     }
 
+    //Insertion Sort Methods
+
     for(int i = 1 ; i<=elements - 1;i++){
         for(int j = i;j>0 && a[j-1] > a[j];j--){
             temp = a[j];
@@ -20,6 +22,8 @@ int main(){
             a[j-1] = temp;
         }
     }
+
+    //Insertion Sort Methods
 
     cout<<"After Insertion Sort: ";
     for(int i = 0;i < elements; i++){
