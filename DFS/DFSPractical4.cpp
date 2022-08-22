@@ -13,7 +13,7 @@ int main(){
         cin>>a[i];
     }
 
-    //Insertion Sort Methods
+    //* Insertion Sort Methods
 
     for(int i = 1 ; i<=elements - 1;i++){
         for(int j = i;j>0 && a[j-1] > a[j];j--){
@@ -23,7 +23,7 @@ int main(){
         }
     }
 
-    //Insertion Sort Methods
+    //* Insertion Sort Methods
 
     cout<<"After Insertion Sort: ";
     for(int i = 0;i < elements; i++){

@@ -2,19 +2,19 @@ import java.util.Scanner;
 
 class OOPJPractical8{
     public static void main(String [] args){
-        // Declaring Variables
+        //* Declaring Variables
         Scanner read = new Scanner(System.in);
         int opt, amount, find;
-        // Declaring Variables
+        //* Declaring Variables
 
-        // Creating List of Accounts
+        //* Creating List of Accounts
         System.out.print("Enter No of Account in the List: ");
         amount = read.nextInt();
         System.out.println();
         Bank List[] = new Bank[amount];
-        // Creating List of Accounts
+        //* Creating List of Accounts
 
-        //Do-While Loop To Keep Function Running
+        //*Do-While Loop To Keep Function Running
         do{
             System.out.println("(1) ==> To Create Accounts.");
             System.out.println("(2) ==> To check Balance of Accounts.");
@@ -26,9 +26,9 @@ class OOPJPractical8{
             opt = read.nextInt();
             System.out.println();
 
-            // Getter Function Of Bank Class
+            //* Getter Function Of Bank Class
             if(opt==1){
-                // Creating new Bank Object Each time for Different Values
+                //* Creating new Bank Object Each time for Different Values
                 for(int i = 0;i<amount;i++){
                     for(int j = 0;j<1;j++){
                         List[i] = new Bank();
@@ -38,25 +38,26 @@ class OOPJPractical8{
                     }
                     System.out.println();
                 }
-                // Creating new Bank Object Each time for Different Values
+                //* Creating new Bank Object Each time for Different Values
             }
-            // Getter Function Of Bank Class
+            //* Getter Function Of Bank Class
 
-            // Displaying Balance of Account
+            //* Displaying Balance of Account
             if(opt==2){
                 do{
-                    System.out.print("Enter Number form the List: ");
+                    System.out.print("Enter Number form the List or (" + (amount+1) + ") or (0) to Exit: ");
                     find = read.nextInt();
+                    if(find>amount || find<=0){
+                        break;
+                    }
                     List[find-1].displayBalance();
                     System.out.println();
                 }
                 while(find<=amount && find>=0);
             }
-            // Displaying Balance of Account
+            //* Displaying Balance of Account
 
-            //@dev - If you have the Solution for exiting Above loop without eror Please Contact Me!!
-
-            // Searching Through the List Vis Account Number
+            //* Searching Through the List Vis Account Number
             if(opt==3){
                 System.out.print("Enter Bank Account Number you Want to Find: ");
                 float Acc_No = read.nextFloat();
@@ -73,11 +74,11 @@ class OOPJPractical8{
                     System.out.println();
                 }
             }
-            // Searching Through the List Vis Account Number
+            //* Searching Through the List Vis Account Number
             
             System.out.println();
         }
         while(opt >= 1 && opt <= 3);
-        //Do-While Loop To Keep Function Running
+        //* Do-While Loop To Keep Function Running
     }
 }

@@ -14,7 +14,7 @@ class DFSPractical4{
             a[i] = read.nextInt();
         }
 
-        //Insertion Sort Method
+        //* Insertion Sort Method
 
         for(int i = 1 ; i<=(elements-1);i++){
             for(int j = i;j>0 && a[j-1] > a[j];j--){
@@ -24,7 +24,7 @@ class DFSPractical4{
             }
         }
 
-        //Insertion Sort Method
+        //* Insertion Sort Method
 
         System.out.print("After Insertion Sort: ");
         for(int i = 0;i < elements; i++){

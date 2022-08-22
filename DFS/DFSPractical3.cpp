@@ -2,11 +2,11 @@
 using namespace std;
 #define MAX 10
 
-//Declaring global Variables
+//* Declaring global Variables
 int a[MAX], Top = -1;
-//Declaring global Variables
+//* Declaring global Variables
 
-//PUSH Function For Stack
+//* PUSH Function For Stack
 void Push(){
     int data;
     if(Top==MAX-1){
@@ -18,9 +18,9 @@ void Push(){
         a[Top] = data;
     }
 }
-//PUSH Function For Stack
+//* PUSH Function For Stack
 
-//POP Function For Stack
+//* POP Function For Stack
 void Pop(){
     if(Top==-1){
         cout<<"!!Stack Underflow!!"<<endl;
@@ -29,9 +29,9 @@ void Pop(){
         Top--;
     }
 }
-//POP Function For Stack
+//* POP Function For Stack
 
-//DISPLAY Function For Stack
+//* DISPLAY Function For Stack
 void Display(){
     int i;
     if(Top>=0){
@@ -44,9 +44,9 @@ void Display(){
         cout<<"!!Stack is EMPTY!!"<<endl;
     }
 }
-//DISPLAY Function For Stack
+//* DISPLAY Function For Stack
 
-//PEEP Function For Stack
+//* PEEP Function For Stack
 void Peep(){
     if(Top<=-1){
         cout<<"!!Stack is EMPTY!!"<<endl;
@@ -54,10 +54,10 @@ void Peep(){
         cout<<"The Element is: "<<a[Top]<<endl;
     }
 }
-//PEEP Function For Stack
+//* PEEP Function For Stack
 
 int main(){
-    //while loop Used So that the Program keeps Runnig and Stores Data
+    //* while loop Used So that the Program keeps Runnig and Stores Data
     while (1){
         int opt;
         cout<<endl;
@@ -93,7 +93,7 @@ int main(){
                 break;
         }
 
-        //If Statement Used hre Defines the Smooth Exit of Program
+        //* If Statement Used hre Defines the Smooth Exit of Program
         if(opt==5){
             break;
         }

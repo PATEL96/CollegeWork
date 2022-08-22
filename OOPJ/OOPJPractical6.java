@@ -6,7 +6,7 @@ class OOPJPractical6{
         int n;
         float temp = 0;
 
-        // Taking Marks as User Input
+        //* Taking Marks as User Input
         System.out.print("Length Of Student List: ");
         n = read.nextInt();
         float Marks[] = new float[n];
@@ -17,9 +17,9 @@ class OOPJPractical6{
             Marks[i] = read.nextFloat();
             System.out.println();
         }
-        // Taking Marks as User Input
+        //* Taking Marks as User Input
 
-        // Interchanging The Marks according to the Requirement
+        //* Interchanging The Marks according to the Requirement
         for(int i = 0; i<n;i++){
             for(int j = i+1;j<n;j++){
                 if(Marks[j]>Marks[i]){
@@ -29,12 +29,12 @@ class OOPJPractical6{
                 }
             }
         }
-        // Interchanging The Marks according to the Requirement
+        //* Interchanging The Marks according to the Requirement
 
-        // Showing Output of the Descending Order
+        //* Showing Output of the Descending Order
         for(int i = 0;i<n;i++){
             System.out.println((i+1) + " ==> " + Marks[i]);
         }
-        // Showing Output of the Descending Order
+        //* Showing Output of the Descending Order
     }
 }

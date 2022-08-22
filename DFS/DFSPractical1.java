@@ -5,15 +5,15 @@ class DFSPractical1{
         Scanner read = new Scanner(System.in);
         int amount, find;
 
-        //Asking for Total No. of Students in the List
+        //* Asking for Total No. of Students in the List
 
         System.out.print("Enter No. of Students: ");
         amount = read.nextInt();
         Student List[] = new Student[amount];
 
-        //Asking for Total No. of Students in the List
+        //* Asking for Total No. of Students in the List
 
-        //Creating List of Students & getting User data for List
+        //* Creating List of Students & getting User data for List
         
         for(int i = 0;i<amount;i++){
             for(int j = 0;j<1;j++){
@@ -34,20 +34,23 @@ class DFSPractical1{
             }
         }
 
-        //Creating List of Students & getting User data for List
+        //* Creating List of Students & getting User data for List
 
-        //Searching Through the List
+        //* Searching Through the List
 
         do{
             System.out.println();
             System.out.print("Which Student You want to Find From(1 - " + amount + "): ");
             find = read.nextInt();
+            if(find>amount){
+                break;
+            }
             System.out.println();
             List[find-1].displayDetails(find-1);
             System.out.println("To exit: Enter No. Greater Than " + amount +" or Press ctrl+C");
         }
         while(find!=amount+1);
 
-        //Searching Through the List
+        //* Searching Through the List
     }
 }

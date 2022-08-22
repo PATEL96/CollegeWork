@@ -40,7 +40,7 @@ class OOPJPractical3{
 		System.out.print("Enter Limit: ");
 		a = read.nextInt();
 		
-		System.out.println("All Amstrong Numbers upto "+ a + "is");
+		System.out.println("All Amstrong Numbers upto "+ a + " is");
 		for(int i=0; i<=a; i++){
 			if(isTrue(i)){
 				System.out.print(i + ",");

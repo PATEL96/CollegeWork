@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 class DFSPractical3{
-    //Declaring global Variables
+    //* Declaring global Variables
     static Scanner read = new Scanner(System.in);
     static int MAX = 10;
     static int a[] = new int[MAX];
     static int Top = -1;
-    //Declaring global Variables
+    //* Declaring global Variables
 
-    //PUSH Function For Stack
+    //* PUSH Function For Stack
     static void Push(){
         int data;
         if(Top == MAX-1){
@@ -20,9 +20,9 @@ class DFSPractical3{
             a[Top] = data;
         }
     }
-    //PUSH Function For Stack
+    //* PUSH Function For Stack
 
-    //POP Function For Stack
+    //* POP Function For Stack
     static void Pop(){
         if(Top==-1){
             System.out.println("!!Stack Underflow!!");
@@ -31,9 +31,9 @@ class DFSPractical3{
             Top--;
         }
     }
-    //POP Function For Stack
+    //* POP Function For Stack
 
-    //DISPLAY Function For Stack
+    //* DISPLAY Function For Stack
     static void Display(){
         int i;
         if(Top>=0){
@@ -46,9 +46,9 @@ class DFSPractical3{
             System.out.println("!!Stack is EMPTY!!");
         }
     }
-    //DISPLAY Function For Stack
+    //* DISPLAY Function For Stack
 
-    //PEEP Function For Stack
+    //* PEEP Function For Stack
     static void Peep(){
         if(Top<=-1){
             System.out.println("!!Stack is EMPTY!!");
@@ -56,10 +56,10 @@ class DFSPractical3{
             System.out.println("The Element is: " + a[Top]);
         }
     }
-    //PEEP Function For Stack
+    //* PEEP Function For Stack
 
     public static void main(String [] args){
-        //while loop Used So that the Program keeps Runnig and Stores Data
+        //* While loop Used So that the Program keeps Runnig and Stores Data
         while(true){
 
             int opt;
@@ -77,16 +77,16 @@ class DFSPractical3{
 
             switch(opt){
                 case 1:
-                    Push();//Function Call for PUSH
+                    Push();//* Function Call for PUSH
                     break;
                 case 2:
-                    Pop();//Function Call for POP
+                    Pop();//* Function Call for POP
                     break;
                 case 3:
-                    Peep();//Function Call for PEEP
+                    Peep();//* Function Call for PEEP
                     break;
                 case 4:
-                    Display();//Function Call for DISPLAY
+                    Display();//* Function Call for DISPLAY
                     break;
                 case 5:
                     System.out.println("Exiting Program!");
@@ -96,7 +96,7 @@ class DFSPractical3{
                     break;
             }
 
-            //If Statement Used hre Defines the Smooth Exit of Program
+            //* If Statement Used hre Defines the Smooth Exit of Program
             if(opt==5){
                 break;
             }
