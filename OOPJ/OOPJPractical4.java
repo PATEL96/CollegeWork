@@ -29,14 +29,14 @@ class OOPJPractical4{
 		String operator;
 		int a;
 		System.out.println("Enter any Operator from Below");
-		System.out.print("Add, Average, Even, Odd: ");
+		System.out.print("Sum, Average, Even, Odd: ");
 		operator = read.next();
 		System.out.print("Enter any Integer: ");
 		a = read.nextInt();
 		read.close();
 		
 		switch(operator){
-			case "Add":
+			case "Sum":
 				System.out.println(Sum(a));
 				break;
 			case "Average":
