@@ -28,11 +28,12 @@ class OOPJPractical4{
 		Scanner read = new Scanner(System.in);
 		String operator;
 		int a;
-		System.out.print("Enter any Integer: ");
-		a = read.nextInt();
 		System.out.println("Enter any Operator from Below");
 		System.out.print("Add, Average, Even, Odd: ");
 		operator = read.next();
+		System.out.print("Enter any Integer: ");
+		a = read.nextInt();
+		read.close();
 		
 		switch(operator){
 			case "Add":
