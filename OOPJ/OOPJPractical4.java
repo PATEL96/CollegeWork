@@ -40,7 +40,10 @@ class OOPJPractical4{
 				System.out.println(Sum(a));
 				break;
 			case "Average":
-				System.out.println(Sum(a)/a);
+				float sum = Sum(a);
+				float temp = a;
+				float Average = sum/temp;
+				System.out.println(Average);
 				break;
 			case "Even":
 				Even(a);
