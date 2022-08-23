@@ -11,7 +11,7 @@ class OOPJPractical4{
 	static void Even(int n){
 		for(int i = 1;i<=n;i++){
 			if(i%2==0){
-				System.out.print(i+",");
+				System.out.print(i+" ");
 			}
 		}
 	}
@@ -19,7 +19,7 @@ class OOPJPractical4{
 	static void Odd(int n){
 		for(int i = 1;i<=n;i++){
 			if(i%2!=0){
-				System.out.print(i+",");
+				System.out.print(i+" ");
 			}
 		}
 	}
