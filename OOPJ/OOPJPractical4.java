@@ -31,7 +31,7 @@ class OOPJPractical4{
 		System.out.println("Enter any Operator from Below");
 		System.out.print("Sum, Average, Even, Odd: ");
 		operator = read.next();
-		System.out.print("Enter TOp Limit: ");
+		System.out.print("Enter Top Limit: ");
 		a = read.nextInt();
 		read.close();
 		
