@@ -10,7 +10,7 @@ class Bank{
 
     //* Assigning Required Function Calls
     public void getDetails(int n){
-        //*Creating Account From User Input
+        //* Creating Account From User Input
         System.out.println("Enter Details for " + (n+1) + " Account");
         System.out.print("Name: ");
         this.Name = read.nextLine();
@@ -18,7 +18,7 @@ class Bank{
         this.Acc_No[n] = read.nextFloat();
         System.out.print("Account Balance: ");
         this.Balance = read.nextFloat();
-        //*Creating Account From User Input
+        //* Creating Account From User Input
     }
 
     public void displayBalance(){
