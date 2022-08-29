@@ -14,7 +14,7 @@ class OOPJPractical8{
         Bank List[] = new Bank[amount];
         //* Creating List of Accounts
 
-        //*Do-While Loop To Keep Function Running
+        //* Do-While Loop To Keep Function Running
         do{
             System.out.println("(1) ==> To Create Accounts.");
             System.out.println("(2) ==> To check Balance of Accounts.");
