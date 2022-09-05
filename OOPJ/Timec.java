@@ -1,8 +1,8 @@
 class Timec{
-    int Hours, Minutes, Seconds;
+    int Hours = 01, Minutes = 00, Seconds = 00;
 
     public void Display(){
-        Sysytem.out.println(Hours + ":" + Minutes + ":" + Seconds);
+        System.out.println(this.Hours + ":" + this.Minutes + ":" + this.Seconds);
     }
 
     public void createObject(){
