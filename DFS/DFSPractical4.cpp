@@ -1,32 +1,74 @@
 #include<iostream>
+#define MAX 10
 using namespace std;
 
-int main(){
-    int elements, temp;
-    cout<<"Enter total no of Elements: ";
-    cin>>elements;
+int a[MAX],Front = -1, Rear = -1, deleteIndex = 0;
 
-    int a[elements];
-
-    for(int i = 0;i<elements;i++){
-        cout<<"Enter Element "<< (i + 1)<<": ";
-        cin>>a[i];
-    }
-
-    //* Insertion Sort Methods
-
-    for(int i = 1 ; i<=elements - 1;i++){
-        for(int j = i;j>0 && a[j-1] > a[j];j--){
-            temp = a[j];
-            a[j] = a[j-1];
-            a[j-1] = temp;
+void Display(){
+    int i;
+    if(Front == -1 || Rear == -1 || deleteIndex == MAX || deleteIndex > Rear){
+        cout<<"!!Queue Empty!!"<<endl;
+    } else {
+        for(i = deleteIndex;i<=Rear; i++){
+            cout<<a[i]<<" ";
         }
+        cout<<endl;
     }
+}
 
-    //* Insertion Sort Methods
+void Insert(){
+    int data;
+    Front = deleteIndex;
+    if(Rear >= MAX -1){
+        cout<<"!!Queue Overflow!!"<<endl;
+    } else {
+        Rear++;
+        cout<<"Enter Element To Insert: ";
+        cin>>data;
+        a[Rear] = data;
+        Display();
+    }
+}
 
-    cout<<"After Insertion Sort: ";
-    for(int i = 0;i < elements; i++){
-        cout<<a[i]<<" ";
+void Delete(){
+    if(deleteIndex==MAX || deleteIndex>Rear){
+        cout<<"!!Queue Underflow!!"<<endl;
+        Front = -1;
+        Rear = -1;
+        deleteIndex = 0;
+    } else {
+        cout<<"Deleted Item: "<< a[deleteIndex]<<endl;
+        deleteIndex++;
+        Display();
+    }
+}
+
+
+int main(){
+    int opt;
+
+    while(1){
+    cout<<"1 ==> Insert Element."<<endl;
+    cout<<"2 ==> Delete Element."<<endl;
+    cout<<"3 ==> Exit Program."<<endl;
+    cout<<"Enter Option: ";
+    cin>>opt;
+    switch(opt){
+        case 1:
+            Insert();
+            break;
+        case 2:
+            Delete();
+            break;
+        case 3:
+            cout<<"!!Exiting Program!!"<<endl;
+            break;
+        default:
+            cout<<"!!INVALID OPTION!!"<<endl;
+            break;
+        }
+        if(opt>=3){
+            break;
+        }
     }
 }
