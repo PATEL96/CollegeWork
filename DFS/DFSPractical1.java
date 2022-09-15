@@ -89,6 +89,12 @@ class DFSPractical1{
                 case 3:
                     Display();
                     break;
+                case 4:
+                    System.out.println("Exiting Proogram....");
+                    break;
+                default:
+                    System.out.println("!!Internal Error!!");
+                    break;
                 
             }
 
