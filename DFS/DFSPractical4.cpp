@@ -16,7 +16,7 @@ void Display(){
     }
 }
 
-void Insert(){
+void QInsert(){
     int data;
     Front = deleteIndex;
     if(Rear >= MAX -1){
@@ -30,7 +30,7 @@ void Insert(){
     }
 }
 
-void Delete(){
+void QDelete(){
     if(deleteIndex==MAX || deleteIndex>Rear){
         cout<<"!!Queue Underflow!!"<<endl;
         Front = -1;
@@ -48,24 +48,24 @@ int main(){
     int opt;
 
     while(1){
-    cout<<"1 ==> Insert Element."<<endl;
-    cout<<"2 ==> Delete Element."<<endl;
-    cout<<"3 ==> Exit Program."<<endl;
-    cout<<"Enter Option: ";
-    cin>>opt;
-    switch(opt){
-        case 1:
-            Insert();
-            break;
-        case 2:
-            Delete();
-            break;
-        case 3:
-            cout<<"!!Exiting Program!!"<<endl;
-            break;
-        default:
-            cout<<"!!INVALID OPTION!!"<<endl;
-            break;
+        cout<<"1 ==> Insert Element."<<endl;
+        cout<<"2 ==> Delete Element."<<endl;
+        cout<<"3 ==> Exit Program."<<endl;
+        cout<<"Enter Option: ";
+        cin>>opt;
+        switch(opt){
+            case 1:
+                QInsert();
+                break;
+            case 2:
+                QDelete();
+                break;
+            case 3:
+                cout<<"!!Exiting Program!!"<<endl;
+                break;
+            default:
+                cout<<"!!INVALID OPTION!!"<<endl;
+                break;
         }
         if(opt>=3){
             break;
