@@ -11,6 +11,10 @@ class Student{
         this.Address = Address;
         this.Enrollment = Enrollment;
     }
+    public void editDetails(int n, String Name, String Address){
+        this.Name = Name;
+        this.Address = Address;
+    }
     public void displayDetails(int n){
         System.out.println("Name: " + this.Name);
         System.out.println("Address: " + this.Address);

@@ -1,20 +1,18 @@
 import java.util.Scanner;
 
 class DFSPractical1{
-    public static void main(String[] args) {
-        Scanner read = new Scanner(System.in);
-        int amount, find;
+    static int MAX = 10, Index = 0, amount;
+    static Student List[] = new Student[MAX];
+    public static Scanner read = new Scanner(System.in);
+    
+    public static String Name;
+    public static String Address;
+    public static int Enrollment;
 
-        //* Asking for Total No. of Students in the List
-
+    static void Insert(){
         System.out.print("Enter No. of Students: ");
         amount = read.nextInt();
-        Student List[] = new Student[amount];
 
-        //* Asking for Total No. of Students in the List
-
-        //* Creating List of Students & getting User data for List
-        
         for(int i = 0;i<amount;i++){
             for(int j = 0;j<1;j++){
                 List[i] = new Student();
@@ -33,24 +31,71 @@ class DFSPractical1{
                 List[i].getDetails(i, Name, Address, Enrollment);
             }
         }
+    }
 
-        //* Creating List of Students & getting User data for List
-
-        //* Searching Through the List
-
-        do{
+    static void Display(){
+        int find;
+        while(true) {
             System.out.println();
             System.out.print("Which Student You want to Find From(1 - " + amount + "): ");
             find = read.nextInt();
-            if(find>amount){
+            if(find==amount+1){
                 break;
             }
             System.out.println();
             List[find-1].displayDetails(find-1);
-            System.out.println("To exit: Enter No. Greater Than " + amount +" or Press ctrl+C");
+            System.out.println("To exit: Enter No. Greater Than " + amount);
         }
-        while(find!=amount+1);
+    }
 
-        //* Searching Through the List
+    static void Modify(){
+        int edit;
+        while(true) {
+            System.out.println();
+            System.out.print("Which Student You want to Find From(1 - " + amount + "): ");
+            edit = read.nextInt();
+            if(edit==amount+1){
+                break;
+            }
+            System.out.print("Name of Student "+ (edit) +": ");
+            Name = read.next();
+            System.out.print("Address of Student "+ (edit) +": ");
+            Address = read.next();
+            System.out.println();
+            List[edit-1].editDetails(edit-1, Name, Address);
+            System.out.println("To exit: Enter No. Greater Than " + amount);
+        }
+    }
+
+
+    public static void main(String [] args) {
+        int opt;
+
+        while(true) {
+            System.out.println("1 ==> Insert Student Data.");
+            System.out.println("2 ==> Modify Student Data.");
+            System.out.println("3 ==> Display Student Data.");
+            System.out.println("4 ==> Exit Program.");
+            System.out.print("Enter Option: ");
+            opt = read.nextInt();
+
+            switch(opt){
+                case 1:
+                    Insert();
+                    break;
+                case 2:
+                    Modify();
+                    break;
+                case 3:
+                    Display();
+                    break;
+                
+            }
+
+            if(opt>=4){
+                break;
+            }
+
+        }
     }
 }
