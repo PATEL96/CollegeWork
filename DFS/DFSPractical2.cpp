@@ -30,6 +30,9 @@ int main(){
         cout<<"Enter the Student number You want to Find Or Press ctrl+C: ";
         cin>>search;
         cout<<endl;
+        if(search>n){
+            break;
+        }
         cout<<"Name: "<<List[search-1].Name<<endl;
         cout<<"Address: "<<List[search-1].Address<<endl;
         cout<<"Enrollment: "<<List[search-1].Enrollment<<endl;

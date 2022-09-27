@@ -1,0 +1,66 @@
+--Part A
+--Avg()
+select Avg(Price) from Product;
+--Sum()
+select Sum(Price) from Product;
+--Min()
+select Min(Price) from Product;
+--Max()
+select Max(Price) from Product;
+--Count()
+select Count(Price) from Product;
+--Count(*)
+select Count(*) from Product;
+--1
+select Sum(Quantity) from Stock;
+--2
+select Sum(Quantity) from Oline where Corder_No = 200;
+
+--Part B
+--Abs()
+select Abs(-627) from dual;
+--Power()
+select Power(5,10) from dual;
+--Sqrt()
+select Sqrt(10) from dual;
+--Round()
+select Round(500.837777,5) from dual;
+--Mod()
+select Mod(21,92) from dual;
+--Greatest()
+select Greatest(12,92,33) from dual;
+--Least()
+select Least(21,92,33) from dual;
+
+
+--Part C
+--Length()
+select Length('Raj D. Patel') from dual;
+--Lower()
+select Lower('RAJ') from dual;
+--Upper()
+select Upper('raj') from dual;
+--Initcap()
+select Initcap('raj') from dual;
+--Lpad()
+select Lpad('RAJ',11,'VANDAN') from dual;
+--Rpad()
+select Rpad('RAJ',11,'VANDAN') from dual;
+--Translate()
+select Translate('rajpatel', 'a', 'j') from dual;
+--Trim()
+select Trim(Leading 'R' from 'RAJ') from dual;
+select Trim(Trailing 'J' from 'RAJ') from dual;
+select Trim(Both 'A' from 'PATEL') from dual;
+
+--Part D
+--To_Char(Number)
+select To_char(26.95857, 99.99) from dual;
+--to_Char(Date)
+select To_char(sysdate,'dd/mm/yyyy') from dual;
+--To_date()
+select To_date('02/18/2002', 'MM/DD/YYYY') from dual;
+--Last_day()
+select Last_day(Sysdate) from dual;
+--Months_between()
+select Months_between('05/12/2005', '01/12/2002') from dual;

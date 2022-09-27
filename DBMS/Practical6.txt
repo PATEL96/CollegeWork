@@ -1,0 +1,31 @@
+--1
+SELECT SalesRep.Name , Depot.location FROM SalesRep INNER JOIN Depot ON SalesRep.Rep_No = Depot.Rep_No;
+
+--2
+SELECT Customer.Name , Depot.Location FROM Customer INNER JOIN Depot ON Customer.Depot_No = Depot.Depot_No WHERE Rep_No = 3;
+
+--3
+SELECT SalesRep.Rep_No , Depot.Location , Depot.Address FROM SalesRep INNER JOIN Depot ON SalesRep.Rep_No = Depot.Rep_No WHERE Name = 'MIKE';
+
+--4
+select Address, Date_Placed, Product_No, Quantity from Customer inner join Corder  on Customer.Customer_No = Corder.Customer_No inner join Oline on Corder.Corder_No = Oline.Corder_No where Name = 'PATEL';
+
+--5
+select Customer.Name from Customer inner join Depot on Customer.Depot_No = Depot.Depot_No inner join SalesRep on Depot.Depot_No = SalesRep.Rep_No where SalesRep.Name = 'FRED';
+
+--6
+select Name, Date_Placed, Quantity, Description from Product inner join Customer on Product.Supply_Depot_No = Customer.Depot_No inner join Corder on Customer.Customer_No = Corder.Customer_No inner join Oline on Corder.Corder_No = Oline.Corder_No where Customer.Depot_No = 2;
+
+--7
+select Supplier.Name, SalesRep.Name from Supplier inner join Product on Supplier.Supplier_No = Product.Supplier_No inner join SalesRep on Product.Marketing_Rep_No = SalesRep.Rep_No;
+
+--8
+select Supplier.Name, SalesRep.Name from Supplier inner join Product on Product.Supplier_No = Supplier.Supplier_No inner join SalesRep on SalesRep.Rep_No = Product.Marketing_Rep_No inner join Depot on Depot.Rep_No = SalesRep.Rep_No;
+
+--9
+select Customer.Name from Customer inner join Depot on Customer.Depot_No = Depot.Depot_No inner join SalesRep on SalesRep.Rep_No = Depot.Rep_No where SalesRep.Name = 'ALI';
+
+--10
+select Name from Customer inner join Depot on Depot.Depot_No = Customer.Depot_No where Name = 'DRAKE';
+
+--11
