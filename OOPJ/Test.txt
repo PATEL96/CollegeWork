@@ -1,0 +1,19 @@
+Name: 1
+Employee Number: 1
+Salary: 3.0
+
+Name: 2
+Employee Number: 2
+Salary: 8.0
+
+Name: 3
+Employee Number: 3
+Salary: 15.0
+
+Name: 4
+Employee Number: 4
+Salary: 24.0
+
+Name: 5
+Employee Number: 5
+Salary: 35.0
