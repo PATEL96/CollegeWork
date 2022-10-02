@@ -1,16 +1,43 @@
 class Timec{
-    int Hours = 01, Minutes = 00, Seconds = 00;
+    int Hours = 0, Minutes = 0, Seconds = 0;
 
-    public void Display(){
-        System.out.println(this.Hours + ":" + this.Minutes + ":" + this.Seconds);
+    Timec(){
+        Hours = 0;
+        Minutes = 0;
+        Seconds = 0;
     }
 
-    public void createObject(){
-        Timec Obj1 = new Timec();
-        System.out.print("Object 1 ==> ");
-        Obj1.Display();
-        Timec Obj2 = new Timec();
-        System.out.print("Object 2 ==> ");
-        Obj2.Display();
+    Timec(int h, int m, int s){
+        Hours = h;
+        Minutes = m;
+        Seconds = s;
+    }
+
+    Timec addTo(Timec T1){
+        Timec temp = new Timec();
+        temp.Seconds = Seconds + T1.Seconds;
+        temp.Minutes = Minutes + T1.Minutes;
+        temp.Hours = Hours + T1.Hours;
+
+        if(temp.Seconds>12){
+            temp.Hours = temp.Hours - 12;
+        }
+        
+        if(temp.Seconds>=60){
+            temp.Seconds = temp.Seconds - 60;
+            temp.Minutes++;
+        }
+
+        if(temp.Minutes>=60){
+            temp.Minutes = temp.Minutes - 60;
+            temp.Hours++;
+        }
+
+
+        return temp;
+    }
+
+    void displayTime(){
+        System.out.println(Hours + " : " + Minutes + " : " + Seconds);
     }
 }
