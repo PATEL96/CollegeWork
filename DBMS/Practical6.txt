@@ -29,3 +29,10 @@ select Customer.Name from Customer inner join Depot on Customer.Depot_No = Depot
 select Name from Customer inner join Depot on Depot.Depot_No = Customer.Depot_No where Name = 'DRAKE';
 
 --11
+select Product.Description, Oline.Quantity from Oline inner join Corder on Oline.Corder_No = Corder.Corder_No inner join Customer on Corder.Customer_No = Customer.Customer_No inner join Depot on Customer.Depot_No=Depot.Depot_No inner join Product on Depot.Depot_No=Product.Supply_Depot_No where Customer.Customer_No =20;
+
+--12
+select Depot.Location, Depot.Address from Depot inner join Product on Depot.Depot_No = Product.Supply_Depot_No where Product_No != 122;
+
+--13
+select Customer.Name, Corder.Corder_No from Customer full join Corder on Customer.Customer_No = Corder.Customer_No;

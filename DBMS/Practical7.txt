@@ -1,0 +1,17 @@
+--1
+select Description from Product inner join Supplier on Supplier.Supplier_No = Product.Supplier_No where Name in ('SMITH');
+
+--2
+select Product_No from Oline inner join Corder on Oline.Corder_No = Corder.Corder_No where Product_No not in (20);
+
+--3
+select Location, Address from Depot inner join Product on Depot.Rep_No = Product.Marketing_Rep_No where Location in ('WALES');
+
+--4
+select Customer_No, Date_Placed, Date_Delivered from Corder  where exists (select Product_No from Stock where Product_No = 137);
+
+--7
+select Product_No from Stock where Quantity >= all(select Quantity from Stock);
+
+--8
+select Address from Customer where Credit_Limit <= all(select Credit_Limit from Customer);  
