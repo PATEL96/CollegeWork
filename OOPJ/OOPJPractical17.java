@@ -28,9 +28,9 @@ class OOPJPractical17{
 
     public static void main (String [] args){
         String test1 = "Raj D. Patel";
+        int len1 = test1.length();
         String test2 = null;
         String test3 = "PATEL96";
-        int len1 = test1.length();
         StringIndexOutOfBoundsExceptionTest(test1, len1);
         NullPointerExceptionTest(test2);
         NumberFormatExceptionTest(test3);

@@ -28,7 +28,7 @@ class Peacock implements Animal{
 class OOPJPractical15{
     public static void main(String [] args){
         Sparrow sparrow = new Sparrow();
-        Peacock peacock =new Peacock();
+        Peacock peacock = new Peacock();
         
         System.out.println("Sparrow.");
         System.out.print("Eats: ");

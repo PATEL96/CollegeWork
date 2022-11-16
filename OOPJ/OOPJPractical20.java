@@ -8,9 +8,11 @@ class OOPJPractical20{
         BufferedReader br = new BufferedReader(fr);
 
         String s;
+        int counter = 0;
         while((s = br.readLine()) != null){
             System.out.println("Reading Files...");
-            bw.write(s + "\n");
+            bw.write((counter+1)+ " " + s + "\n");
+            counter++;
         }
         System.out.println("Done!!");
         bw.close();

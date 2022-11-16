@@ -1,19 +1,25 @@
 import java.util.Scanner;
 
+
+//* 147 = 1^3 + 4^3 + 7^3 = 147/10 = 14/10 = 1 || 147%10 = 7 == 148
+
 class OOPJPractical3{
-    static int power(int base, int exponent){
+    
+	static int power(int base, int exponent){
 		int power = 1;
 		
-		for(int i = 1; i<=exponent;i++){
+		for(int i = 1; i <= exponent;i++){
 			power = power * base;
 		}
 		
 		return power;
 	}
+
 	static boolean isTrue(int n){
 		int temp, digits = 0, last=0, sum=0;
 		
 		temp = n;
+		
 		while(temp>0){
 			temp = temp/10;
 			digits++;
@@ -26,7 +32,7 @@ class OOPJPractical3{
 			temp = temp/10;
 		}
 		
-		if(n==sum){
+		if(n == sum){
 			return true;
 		} else{
 			return false;
@@ -37,15 +43,15 @@ class OOPJPractical3{
 		Scanner read = new Scanner(System.in);
 		int a;
 		
-		System.out.print("Enter Limit: ");
+		System.out.print("Enter Any Integer: ");
 		a = read.nextInt();
 		
-		System.out.println("All Amstrong Numbers upto "+ a + " is");
-		for(int i=0; i<=a; i++){
-			if(isTrue(i)){
-				System.out.print(i + ",");
-			}
+		if(isTrue(a)){
+			System.out.println(a + " is Armstrong.");
+		} else {
+			System.out.println(a + " is not Armstrong.");
 		}
+
 		System.out.println();
 	}
 }

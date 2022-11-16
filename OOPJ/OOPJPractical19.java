@@ -27,8 +27,7 @@ public class OOPJPractical19 extends Thread {
 
     public static void main(String args[]) {
         display a1 = new display();
-        Thread b1 = new
-        Thread(a1);
+        Thread b1 = new Thread(a1);
         b1.start();
         OOPJPractical19 a2 = new OOPJPractical19();
         Thread b2 = new Thread(a2);
