@@ -2,9 +2,9 @@ import java.io.*;
 
 class OOPJPractical20{
     public static void main(String [] args) throws IOException{
-        FileWriter fw = new FileWriter("/Volumes/RAJ/CollegeWork/OOPJ/File2.txt");
+        FileWriter fw = new FileWriter("LOCATION OF YOUR FILE.");
         BufferedWriter bw = new BufferedWriter(fw);
-        FileReader fr = new FileReader("/Volumes/RAJ/CollegeWork/OOPJ/File1.txt");
+        FileReader fr = new FileReader("LOCATION OF YOUR FILE.");
         BufferedReader br = new BufferedReader(fr);
 
         String s;
