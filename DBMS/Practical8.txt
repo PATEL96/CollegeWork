@@ -1,0 +1,32 @@
+--1
+select Supplier_No, count(Product_No) from Product group by Supplier_No;
+
+--2
+select Name, Location, count(Product_No) from Supplier, Depot, Product where Supplier.Supplier_No = Product.Supplier_No and Product.Supply_Depot_No = Depot.Depot_No group by Name, Location;
+
+--3
+select Customer_No, count(Depot.Depot_No) from Customer, Depot where Depot.Depot_No = Customer.Depot_No group by Customer_No having avg(Credit_Limit) > 2000;
+
+--4
+select count(Quantity), Product_No from Oline group by Product_No;
+
+--5
+select Supplier_No from Supplier where Supplier_No in (select Supplier_No from Product where Price < 1000);
+
+--6
+select Date_Placed, count(Customer_No) from Corder group by Date_Placed;
+
+--7
+select Rack_No, Sum(Quantity) from Stock group by Rack_No;
+
+--8
+select location, count(Customer_No) from Customer, Depot where Customer.Depot_No = Depot.Depot_no group by Location;
+
+--9
+select distinct(Name) from Customer inner join Corder on Customer.Customer_No = Corder.Customer_No inner join Corder C on C.Date_Placed = C.Date_Placed;
+
+--10
+select Description from Product order by Description desc;
+
+--11
+select Supplier.Name, Product.Description from Supplier inner join Product on Product.Supplier_No = Supplier.Supplier_No order by Product.Description;

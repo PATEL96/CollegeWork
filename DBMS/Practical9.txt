@@ -1,0 +1,70 @@
+--1 A
+select Price,
+
+case when Price > 1000 then 'High'
+else 'Low'
+end
+
+from Product
+
+--1 B
+select Price,
+
+case when Price > 1000 then 'High'
+when Price > 800 then 'Medium'
+else 'Low'
+end
+
+from Product;
+
+--1 C
+select avg(Product.Price) Price,
+
+case
+when avg(Product.Price) >=10000 then 'High'
+when avg(Product.Price) >= 1000 then 'Medium'
+else 'Low'
+end
+
+Rating, Sum(Stock.Quantity) Quantity,
+
+case
+when sum(Stock.Quantity) >= 100 then 'High'
+when sum(Stock.Quantity) >= 50 then 'Medium'
+else 'Low'
+end Rating
+
+from Product inner join Stock on Product.Product_No = Stock.Product_No group by Product.Product_No order by Product.Product_No;
+
+--2
+create view VProduct as select Product_No, Price, Description from Product;
+select * from VProduct;
+
+--3
+create view Vorder as select Corder.Corder_No, Product.Product_No, Product.Description, Customer.Name, Oline.Quantity from Corder inner join Customer on Corder.Customer_No = Customer.Customer_No inner join Oline on Corder.Corder_No = Oline.Corder_No inner join Product on Oline.Product_No = Product.Product_No where Customer.Address = 'BRIXTON';
+select * from Vorder;
+
+--4
+insert into VProduct values('135', '35000', 'SOFA');
+select * from VProduct;
+
+--5
+Update Vorder set Quantity = 25 where Name = 'DRAKE';
+select * from Vorder;
+
+--6
+delete from VProduct where Product_No = 121;
+select * from VProduct;
+
+--7
+drop view VProduct;
+select * from VProduct;
+
+--8
+select Name, Customer_No id from Customer union select Name, Supplier_No id from Supplier;
+
+--9
+select Description from Product where Product_No in(select Product_No from Product minus select Product_No from Oline);
+
+--10
+select Name from Supplier intersect select Name from Customer;

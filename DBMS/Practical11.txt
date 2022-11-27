@@ -1,0 +1,45 @@
+--1
+declare
+    cid Customer.Customer_No%type;
+    cname Customer.Name%type;
+    cursor Customer_Cursor is select Customer_No, Name from Customer;
+begin
+    open Customer_Cursor;
+        loop
+            fetch Customer_Cursor
+                into cid, cname;
+        exit when Customer_Cursor%NOTFOUND;
+        dbms_output.put_line(cid||' '||cname);
+        end loop;
+end;
+
+--2
+declare
+    cno Customer.Customer_No%type;
+    cname Customer.Name%type;
+    ccr Customer.Credit_Limit%type;
+    cursor Cur is select Customer_No, Name, Credit_Limit from Customer;
+begin
+    open Cur;
+        loop
+            fetch Cur into cno, cname, ccr;
+            exit when Cur%NOTFOUND;
+            if(ccr<10000)
+                then
+                    ccr:= ccr+(ccr*0.2);
+                else
+                    ccr:= ccr+(ccr*0.12);
+            end if;
+            update Customer set Credit_Limit = ccr where Customer_No = cno;
+        end loop;
+    close Cur;
+end;
+select * from Customer;
+
+--3
+begin
+    for temp in (select Customer.Name, Depot.Location from Customer inner join Depot on Customer.Depot_No = Depot.Depot_No)
+        loop
+            dbms_output.put_line(rpad(temp.Name,13)||' '||temp.Location);
+    end loop;
+end;

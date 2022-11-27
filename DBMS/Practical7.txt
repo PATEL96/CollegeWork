@@ -8,10 +8,16 @@ select Product_No from Oline inner join Corder on Oline.Corder_No = Corder.Corde
 select Location, Address from Depot inner join Product on Depot.Rep_No = Product.Marketing_Rep_No where Location in ('WALES');
 
 --4
-select Customer_No, Date_Placed, Date_Delivered from Corder  where exists (select Product_No from Stock where Product_No = 137);
+select Customer_No, Date_Placed, Date_Delivered from Corder where exists (select Product_No from Stock where Product_No = 137);
+
+--5
+select Depot_no from Depot where Depot_No not in (select Depot_No from Stock where Product_no in (select Product_No from Product where Supplier_no in (select Supplier_No from Supplier where Name = 'RINGWORLD')));
+
+--6
+select Location, Address from Depot where Depot_no in(select Depot_No from Stock where Product_No in(select Product_No from Product where Supplier_No in(select Supplier_No from Supplier where Name = 'BABYLON')));
 
 --7
-select Product_No from Stock where Quantity >= all(select Quantity from Stock);
+select Product_No from Stock where Quantity in(select Max(Quantity) from Stock) group by Product_No;
 
 --8
-select Address from Customer where Credit_Limit <= all(select Credit_Limit from Customer);  
+select Address from Customer where Credit_Limit = (select min(Credit_Limit) from Customer);

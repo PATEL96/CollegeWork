@@ -1,0 +1,43 @@
+--1
+create table Customers(Id int, Name varchar(20), Age int, Salary int);
+
+insert into Customers values(123, 'Raj', 19, 80000);
+insert into Customers values(124, 'Vandan', 17, 30000);
+insert into Customers values(125, 'Safu', 19, 65000);
+insert into Customers values(126, 'Vatsal', 19, 60000);
+
+create or replace trigger T1 
+before delete or insert or update on Customers for each row when(new.Id >0)
+    declare
+        Diff number;
+    begin
+        Diff:= :new.Salary - :old.Salary;
+        
+        dbms_output.put_line('Old: ' || :old.Salary);
+        dbms_output.put_line('New: ' || :new.Salary);
+        dbms_output.put_line('DIfference: ' || Diff);
+    end;
+
+update Customers set Salary = Salary + 5000 where Id = 123;
+
+--2
+create or replace trigger T2
+before insert or update of Quantity on Oline for each row when(new.Quantity>1000)
+begin
+    raise_application_error(-20009,'Limit Crossed');
+end;
+
+insert into Oline(Quantity) values(1366);
+
+--3
+create table PriceUpdate(Product_No int, Old_Price int, New_Price int);
+
+create or replace trigger T3
+after update of Price on Product for each row
+begin
+    insert into PriceUpdate values(:old.Product_No, :old.Price, :new.Price);
+end;
+
+update Product set Price = 1800 where Product_No = 121;
+select * from Product where Product_No = 121;
+select * from PriceUpdate;

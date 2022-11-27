@@ -1,0 +1,120 @@
+--1
+declare
+    a number;
+    b number;
+    c number;
+begin
+    a := 10;
+    b := 40;
+
+    dbms_output.put_line('Before Swap');
+    dbms_output.put_line('A = ' || a || ' B = ' || b);
+
+    c := a;
+    a := b;
+    b := c;
+
+    dbms_output.put_line('After Swap');
+    dbms_output.put_line('A = ' || a || ' B = ' || b);
+end;
+
+--2
+declare
+    Enrollment_No number;
+    Name varchar(20);
+    Contact number;
+    Qualification varchar(25);
+begin
+    Enrollment_No:=:Enter_Enrollment_No;
+    Name:=:Enter_Name;
+    Contact:=:Enter_Phone_No;
+    Qualification:=:Enter_Qualification;
+
+    dbms_output.put_line('Enrollment No: ' || Enrollment_No);
+    dbms_output.put_line('Name: ' || Name);
+    dbms_output.put_line('Phone No: ' || Contact);
+    dbms_output.put_line('Qualification: ' || Qualification);
+end;
+
+--3
+declare
+    year number;
+begin
+    year:=:Enter_A_Year;
+
+    if mod(year,4)=0
+        then
+            dbms_output.put_line(year || ' Is Leap Year.');
+        else
+            dbms_output.put_line(year || ' Is Not A Leap Year');
+    end if;
+end;
+
+--4
+declare
+    Val number;
+    Factorial number;
+begin
+
+    Val:=:Enter_Any_Interger;
+    Factorial:=1;
+
+    for i in 1..Val
+        loop
+            Factorial:=Factorial*i;
+    end loop;
+
+    dbms_output.put_line('Factorial of ' || Val || ' is: ' || Factorial);
+end;
+
+--5
+declare
+    a number;
+    temp number;
+    rem number(1,0);
+    rev number;
+begin
+
+    a:=:Enter_any_value;
+    temp:=a;
+    rev:=0;
+
+    while(temp>1)
+        loop
+            rem:=mod(temp,10)-0.5;
+            dbms_output.put_line(rem);
+            rev:=(rev*10)+rem;
+            dbms_output.put_line(rev);
+            temp:=temp/10;
+            dbms_output.put_line(temp);
+    end loop;
+
+    a:=rev;
+
+    dbms_output.put_line(a);
+end;
+
+--6
+declare
+    a number;
+    temp number;
+begin
+    a:=:Enter_any_value;
+
+    for i in 2..a/2
+        loop
+            if mod(a,i)=0
+                then
+                    temp:=0;
+                else
+                    temp:=1;
+            end if;
+        end loop;
+    
+    if temp = 1
+        then
+            dbms_output.put_line(a || ' is Prime');
+        else
+            dbms_output.put_line(a || ' is not Prime');
+    end if;
+end;

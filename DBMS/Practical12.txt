@@ -1,0 +1,67 @@
+--1
+create or replace procedure P1(
+    x in SalesRep.Rep_No%type,
+    y in SalesRep.Name%type,
+    z in number
+) as begin
+    if(z=1)
+        then
+            insert into SalesRep values (x,y);
+            dbms_output.put_line('Value inserted');
+    elsif(z=2)
+        then
+            update SalesRep set Name = y where Rep_No = x;
+            dbms_output.put_line('Value Updated');
+    elsif(z=3)
+        then
+            delete from SalesRep where Rep_No = x;
+            dbms_output.put_line('Value Deleted');
+    else
+        dbms_output.put_line('Select from 1,2 or 3');
+    end if;
+end P1;
+
+begin
+    -- P1(7,'RAJ',1);
+    P1(8,'RAJ',1);
+    -- P1(7,'Patel96',2);
+    P1(7,'Patel96',3);
+    P1(8,'RAJ',3);
+end;
+select * from SalesRep;
+
+--2
+create or replace procedure P2(
+    a in Product.Product_No%type
+) as b Product.Price%type;
+begin
+    select price into b from Product where Product_No = a;
+    if b < 1450
+        then
+            update Product set Price = Price + Price*0.20 where Product_No = a;
+        else
+            update Product set Price = Price + Price*0.10 where Product_No = a;
+    end if;
+end;
+
+begin
+    P2(123);
+end;
+
+select * from Product;
+
+--3
+create or replace procedure P3(
+    Price out Product.Price%type,
+    Name out Product.Description%type
+) as begin
+    select Description, Price into Name,Price from Product where Price = (select max(price) from Product);
+end;
+
+declare
+    Price Product.Price%type;
+    Name Product.Description%type;
+begin
+    P3(Price, Name);
+    dbms_output.put_line('Max Price: ' || price || ' Of Product ' || Name);
+end;
