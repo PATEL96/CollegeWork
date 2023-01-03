@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 
-//* 147 = 1^3 + 4^3 + 7^3 = 147/10 = 14/10 = 1 || 147%10 = 7 == 148
+//* 147 = 1^3 + 4^3 + 7^3 || 147%10 = 7 ==> 147/10 = 14 ==> 14%10 = 4 ==> 14/10 = 1 ==> 1%10 = 0
 
 class OOPJPractical3{
     
 	static int power(int base, int exponent){
 		int power = 1;
 		
-		for(int i = 1; i <= exponent;i++){
+		for(int i = 1; i <= exponent; i++){
 			power = power * base;
 		}
 		
@@ -26,6 +26,7 @@ class OOPJPractical3{
 		}
 		
 		temp = n;
+
 		while(temp>0){
 			last = temp%10;
 			sum += power(last, digits);
