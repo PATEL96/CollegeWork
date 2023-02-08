@@ -7,5 +7,7 @@ matrix2 = TransposedMatrix(matrix)
 for row in matrix:
 	print(row)
 
+print()
+
 for row in matrix2:
 	print(row)

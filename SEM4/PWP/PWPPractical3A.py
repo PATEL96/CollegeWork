@@ -1,13 +1,13 @@
-n = int(input("Enter no. of Terms reuired: "))
+n = int(input("Enter no. of Terms required: "))
 
-def Fibonaci(n):
+def Fibonacci(n):
 	if n==0:
 		return 0
 	elif n==1:
 		return 1
 	else:
-		return Fibonaci(n-1) + Fibonaci(n-2)	
+		return Fibonacci(n-1) + Fibonacci(n-2)	
 
-series = [Fibonaci(i)for i in range(0,n)]
+series = [Fibonacci(i)for i in range(0,n)]
 
 print(series)

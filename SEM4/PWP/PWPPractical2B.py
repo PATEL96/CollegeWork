@@ -1,6 +1,8 @@
-Dictionary = {'a':23,'b':17,'c':96}
-Maximum = max(Dictionary, key = Dictionary.get)
-Minimum = min(Dictionary, key = Dictionary.get)
-
-print("Minimum: ", Dictionary[Minimum], " : ", Minimum)
-print("Maximum: ", Dictionary[Maximum], " : ", Maximum)
+Text = str(input("Enter anything: "))
+b =''
+for i in Text:
+    b = i + b
+if Text == b:
+    print("It is Pallindrome")
+else:
+    print("It is Not Pallindrome")
