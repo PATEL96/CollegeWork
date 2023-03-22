@@ -8,3 +8,6 @@ def Series(n):
     return c
 x = int(input("Enter Range of Sereis: "))
 print(Series(x))
+
+# 0 1 1 
+#   1 1 2  

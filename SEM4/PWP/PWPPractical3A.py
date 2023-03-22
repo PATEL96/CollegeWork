@@ -6,8 +6,8 @@ def Fibonacci(n):
 	elif n==1:
 		return 1
 	else:
-		return Fibonacci(n-1) + Fibonacci(n-2)	
+		return Fibonacci(n-1) + Fibonacci(n-2)
 
-series = [Fibonacci(i)for i in range(0,n)]
+series = [ Fibonacci(i) for i in range(0,n) ]
 
 print(series)
