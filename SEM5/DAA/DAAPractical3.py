@@ -1,9 +1,9 @@
 import time
-#data = ['D', 'W', 'A', 'S', 'E', 'U', 'G']
-data = []
-n = int(input())
-for i in reversed(range(n)):
-    data.append(i)
+data = ['D', 'W', 'A', 'S', 'E', 'U', 'G']
+# data = []
+# n = int(input())
+# for i in reversed(range(n)):
+#     data.append(i)
 
 def Sel(data):
     st = time.time()
