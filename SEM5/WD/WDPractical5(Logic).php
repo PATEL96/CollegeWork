@@ -1,4 +1,9 @@
 <body>
+	<div>
+		Name: Raj D. Patel <br>
+		Enrollment: 202103103510081 <br>
+		Class: I.T. A (Batch 1)
+	</div>
 	<a href="WDPractical5(UI).php" >Back</a>
 	<br>
 	<link href="style.css" rel="stylesheet">

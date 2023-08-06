@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body>
+    <div>
+		Name: Raj D. Patel <br>
+		Enrollment: 202103103510081 <br>
+		Class: I.T. A (Batch 1)
+	</div>
     <a href="main.html" >Back</a>
+    <link href="style.css" rel="stylesheet">
 	<br>
     <center>
         <div>
