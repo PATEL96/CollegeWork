@@ -1,10 +1,9 @@
-def knapsack_1(items, W):
-    sorted_items = sorted(items, key=get_Val, reverse=True)
+def sackItems(items, W):
     total_value = 0
     knapsack_weight = 0
     outmap = [0] * len(items)
     
-    for item in sorted_items:
+    for item in items:
         if knapsack_weight + item[2] <= W:
             total_value += item[1]
             outmap[items.index(item)] = 1
@@ -16,45 +15,19 @@ def knapsack_1(items, W):
             total_value += fraction * item[1]
             
     return total_value,outmap
+
+def knapsack_1(items, W):
+    sorted_items = sorted(items, key=get_Val, reverse=True)
+    return sackItems(sorted_items, W)
+    
 
 def knapsack_2(items, W):
     sorted_items = sorted(items, key=get_Weight)
-    total_value = 0
-    knapsack_weight = 0
-    outmap = [0] * len(items)
+    return sackItems(sorted_items, W)
     
-    for item in sorted_items:
-        if knapsack_weight + item[2] <= W:
-            total_value += item[1]
-            outmap[items.index(item)] = 1
-            knapsack_weight += item[2]
-        else:
-            remaining_capacity = W - knapsack_weight
-            fraction = remaining_capacity / item[2]
-            outmap[items.index(item)] = fraction
-            total_value += fraction * item[1]
-            
-    return total_value,outmap
-
 def knapsack_3(items, W):
     sorted_items = sorted(items, key=lambda x: x[1] / x[2], reverse=True)
-
-    total_value = 0
-    knapsack_weight = 0
-    outmap = [0] * len(items)
-
-    for item in sorted_items:
-        if knapsack_weight + item[2] <= W:
-            total_value += item[1]
-            outmap[items.index(item)] = 1
-            knapsack_weight += item[2]
-        else:
-            remaining_capacity = W - knapsack_weight
-            fraction = remaining_capacity / item[2]
-            outmap[items.index(item)] = fraction
-            total_value += fraction * item[1]
-
-    return total_value,outmap
+    return sackItems(sorted_items, W)
 
 def get_Val(item):
     return item[1]
