@@ -19,7 +19,6 @@ def sackItems(items, W):
 def knapsack_1(items, W):
     sorted_items = sorted(items, key=get_Val, reverse=True)
     return sackItems(sorted_items, W)
-    
 
 def knapsack_2(items, W):
     sorted_items = sorted(items, key=get_Weight)
