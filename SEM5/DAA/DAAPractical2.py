@@ -21,7 +21,17 @@ data = [
 def get_Height(data):
     return data[1]
 
-sorted_list = sorted(data, key=get_Height)
-print(sorted_list)
+def BubbleSort(data):
+    swapped = False
+    
+    for n in range(len(data)-1, 0, -1):
+        for i in range(n):
+            if get_Height(data[i]) > get_Height(data[i+1]):
+                swapped = True
+                data[i], data[i+1] = data[i+1], data[i]
+        if not swapped:
+            return
+BubbleSort(data)
+print(data)
 et = time.time()
 print(et-st)

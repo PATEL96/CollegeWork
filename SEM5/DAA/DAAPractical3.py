@@ -1,19 +1,25 @@
 import time
-data = ['D', 'W', 'A', 'S', 'E', 'U', 'G']
-# data = []
-# n = int(input())
-# for i in reversed(range(n)):
-#     data.append(i)
+# data = ['D', 'W', 'A', 'S', 'E', 'U', 'G']
+
+data = []
+n = int(input())
+for i in reversed(range(n)):
+    data.append(i)
 
 def Sel(data):
     st = time.time()
-    Arr = data.copy()
-    for i in range(len(Arr)):
-        minimum = i
-        for j in range(i+1, len(Arr)):
-            if Arr[j] > Arr[minimum]:
-                minimum = j
-                Arr[i], Arr[minimum] = Arr[minimum], Arr[i]
+    n = len(data)
+      
+    if n <= 1:
+        return
+
+    for i in range(1, n):
+        key = data[i]
+        j = i-1
+        while j >= 0 and key < data[j]:
+            data[j+1] = data[j]
+            j -= 1
+        data[j+1] = key
     
     et = time.time()
     return(et - st)
