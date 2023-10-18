@@ -29,6 +29,17 @@ class Graph:
         
         print(stack)
 
+'''
+0 = Prepare Ingredients
+1 = Heat Griddle
+2 = Mix Ingredients
+3 = Pour Onto Griddle
+4 = Turn When Starts to Bubble
+5 = Cook Until Golden Brown
+6 = Eat
+7 = Heat Syrup
+'''
+
 g= Graph(8)
 g.addEdge(0, 2)
 g.addEdge(2, 3)
@@ -38,4 +49,5 @@ g.addEdge(5, 6)
 g.addEdge(7, 6)
 g.addEdge(1, 3)
 
+print("The Sequence Should be: ")
 g.toptlogicalSort()
