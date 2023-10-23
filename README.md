@@ -7,19 +7,19 @@ A repo that contains all the Practicals performed in Lab sessions also with some
 Clone the project
 
 ```bash
-  git clone https://github.com/PATEL96/CollegeWork
+git clone https://github.com/PATEL96/CollegeWork
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+cd my-project
 ```
 
 Open Project in VS Code
 
 ```bash
-  code .
+code .
 ```
 
 Now edit any file you want!!!
