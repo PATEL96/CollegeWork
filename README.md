@@ -1,50 +1,44 @@
-# CollegeWork
+# College WorK
 
-Example for Classes And Objects IN `Java`/`C++`.\
-Download Any file with Extension `.java` or `.cpp`.
+A repo that contains all the Practicals performed in Lab sessions also with some new Tweaks 
 
-## Note!!
+## To Get all Files and Test them Locally follow below steps
 
-### All the Classes are kept Seperately for Your Convinience.
+Clone the project
 
-### For DBMS `Database Management System` Copy code from `.txt` files.
+```bash
+  git clone https://github.com/PATEL96/CollegeWork
+```
 
-### Thanks!!
+Go to the project directory
 
-#
+```bash
+  cd my-project
+```
 
-## Scripts
+Open Project in VS Code
 
-### Java Terminal & Command Prompt Codes
+```bash
+  code .
+```
 
-#
+Now edit any file you want!!!
 
-#### Mac Os
+## Folders
 
-`javac <filename>.java && java <filename>`
+ - [SEM3](https://github.com/PATEL96/CollegeWork/tree/master/SEM3)
+ - [SEM4](https://github.com/PATEL96/CollegeWork/tree/master/SEM4)
+ - [SEM5](https://github.com/PATEL96/CollegeWork/tree/master/SEM5)
 
-#### Windows
 
-`javac <filename>.java && java <filename>`
+## Tech Stack
 
-#### Linux
+**Learning Languages:** C/C++, Java, Python, HTML, CSS, JavaScript, PHP
 
-`javac <filename>.java && java <filename>`
+## Support
 
-#
+- Follow [@PATEL96](https://www.github.com/PATEL96)
 
-### C++ Terminal & Command Prompt Codes
+## Authors
 
-#
-
-#### Mac Os
-
-`g++ <filename>.cpp && ./a.out`
-
-#### Windows
-
-`g++ <filename>.cpp && ./a.exe`
-
-#### Linux
-
-`g++ <filename>.cpp && ./a.out`
+- [@PATEL96](https://www.github.com/PATEL96)
