@@ -13,7 +13,7 @@ git clone https://github.com/PATEL96/CollegeWork
 Go to the project directory
 
 ```bash
-cd my-project
+cd CollegeWork
 ```
 
 Open Project in VS Code
