@@ -30,14 +30,14 @@ class Graph:
         print(stack)
 
 '''
-0 = Prepare Ingredients
-1 = Heat Griddle
-2 = Mix Ingredients
-3 = Pour Onto Griddle
-4 = Turn When Starts to Bubble
-5 = Cook Until Golden Brown
-6 = Eat
-7 = Heat Syrup
+0 => A = Prepare Ingredients
+1 => B = Heat Griddle
+2 => C = Mix Ingredients
+3 => D = Pour Onto Griddle
+4 => E = Turn When Starts to Bubble
+5 => F = Cook Until Golden Brown
+6 => G = Eat
+7 => H = Heat Syrup
 '''
 
 g= Graph(8)

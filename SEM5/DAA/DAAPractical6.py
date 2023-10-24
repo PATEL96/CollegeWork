@@ -6,7 +6,7 @@ def makeChange(coins, total):
 		
 	for i in range(len(coins)):
 		for j in range(total+1):
-			if( i == 0 and j < coins[i]):
+			if i == 0 and j < coins[i]:
 				table[i][j] = 0
 			elif(i == 0):
 				table[i][j] = 1+table[0][j-coins[0]]
@@ -24,7 +24,7 @@ def backTrack(coins, _i, _j, table):
 	j = _j
 	
 	while(j > 0):
-		if(table[i][j] == table[i-1][j]):
+		if(table[i][j] == table[i-1][j]) and i > 0 :
 			i = i-1
 		else:
 			j = j - coins[i]
@@ -35,8 +35,8 @@ def backTrack(coins, _i, _j, table):
 		
 	return solution
 
-coins = [1,4,6]
-total = 8
+coins = [1,10,20,50,100,500]
+total = 732
 
 main = makeChange(coins, total)
 i = main[0]
