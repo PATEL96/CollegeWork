@@ -1,30 +1,157 @@
 def setUpper(text):
     return text.upper()
 
-def generateKeyTable(word):
-    list1 = ['0','1','2','3','4','5','6','7','8','9','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K', 'L', 'M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    key_letters = []
-    for i in word:
-        if i not in key_letters:
-            key_letters.append(i)
- 
-    compElements = []
-    for i in key_letters:
-        if i not in compElements:
-            compElements.append(i)
-    for i in list1:
-        if i not in compElements:
-            compElements.append(i)
- 
+def removeSpaces(text):
+    newText = ""
+    for i in text:
+        if i == " ":
+            continue
+        else:
+            newText = newText + i
+    return newText
+
+def partInTwo(data):
+    List = []
+    group = 0
+    for i in range(2, len(data), 2):
+        List.append(data[group:i])
+        
+        group = i
+    List.append(data[group:])
+    return List
+
+def makeParts(plainText):
+    k = len(plainText)
+    
+    if k % 2 == 0:
+        for i in range(0, k, 2):
+            if plainText[i] == plainText[i+1]:
+                new_word = plainText[0:i+1] + str('X') + plainText[i+1:]
+                new_word = makeParts(new_word)
+                break
+            else:
+                new_word = plainText
+    else:
+        for i in range(0, k-1, 2):
+            if plainText[i] == plainText[i+1]:
+                new_word = plainText[0:i+1] + str('X') + plainText[i+1:]
+                new_word = makeParts(new_word)
+                break
+            else:
+                new_word = plainText + str('X')
+    
+    return new_word
+
+def generateKeyTable(Key):
     matrix = []
-    while compElements != []:
-        matrix.append(compElements[:6])
-        compElements = compElements[6:]
- 
+    data = ['0','1','2','3','4','5','6','7','8','9','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J','K', 'L', 'M','N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    
+    k1 = []
+    dataNew = []
+    
+    for i in Key:
+        if i not in k1:
+            k1.append(setUpper(i))
+            
+    for i in k1:
+        if i not in dataNew:
+            dataNew.append(i)
+    
+    for i in data:
+        if i not in dataNew:
+            dataNew.append(i)
+            
+    while dataNew != []:
+        matrix.append(dataNew[:6])
+        dataNew = dataNew[6:]
+
     return matrix
 
+def inSameCol(matrix, el1Row, el1Col, el2Row, el2Col):
+    char1 = ''
+    char2 = ''
+    
+    if el1Row == 5:
+        char1 = matrix[0][el1Col]
+    else:
+        char1 = matrix[el1Row + 1][el1Col]
 
-x = generateKeyTable(setUpper("rajpaTel2312"))
+    if el2Row == 5:
+        char2 = matrix[0][el2Col]
+    else:
+        char2 = matrix[el2Row + 1][el2Col]
+        
+    return char1, char2
 
+def inSameRow(matrix, el1Row, el1Col, el2Row, el2Col):
+    char1 = ''
+    char2 = ''
+    
+    if el1Row == 5:
+        char1 = matrix[el1Row][0]
+    else:
+        char1 = matrix[el1Row][el1Col+1]
+
+    if el2Row == 5:
+        char2 = matrix[el2Row][0]
+    else:
+        char2 = matrix[el2Row][el2Col+1]
+        
+    return char1, char2
+
+def intersection(matrix, el1Row, el1Col, el2Row, el2Col):
+    char1 = ''
+    char2 = ''
+
+    char1 = matrix[el1Row][el2Col]
+    char2 = matrix[el2Row][el1Col]
+    
+    return char1, char2
+
+def search(matrix, data):
+    for i in range(6):
+        for j in range(6):
+            if(matrix[i][j] == data):
+                return i, j
+
+def encryptPlayFair(plainText, Matrix):
+    cipherText = []
+    
+    for i in range(0, len(plainText)):
+        c1 = 0
+        c2 = 0
+        
+        el1_x, el1_y = search(Matrix, plainText[i][0])
+        el2_x, el2_y = search(Matrix, plainText[i][1])
+        
+        if el1_x == el2_x:
+            c1 ,c2 = inSameRow(Matrix, el1_x, el1_y, el2_x, el2_y)
+        elif el1_y == el2_y:
+            c1 ,c2 = inSameCol(Matrix, el1_x, el1_y, el2_x, el2_y)
+        else:
+            c1 ,c2 = intersection(Matrix, el1_x, el1_y, el2_x, el2_y)
+        
+        cipher = c1 + c2
+        cipherText.append(cipher)
+    
+    return cipherText
+
+PlainText = open("./Plain.txt").read()
+PlainText = removeSpaces(PlainText)
+PlainText = setUpper(PlainText)
+print(PlainText)
+PlainText = makeParts(PlainText)
+PlainText = partInTwo(PlainText)
+print(PlainText)
+Key = "PATEL96"
+matrix = generateKeyTable(Key)
 for i in range(6):
-    print(x[i])
+    print(matrix[i])
+
+cipherList = encryptPlayFair(PlainText, matrix)
+cipher = ""
+for i in range(len(cipherList)):
+    cipher = cipher + cipherList[i]
+out = open("./Cipher.txt", 'w')
+out.write(cipher)
+print(cipher)
