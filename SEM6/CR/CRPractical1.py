@@ -26,6 +26,9 @@ def bruteForce(text):
 text = open("./Plain.txt").read()
 shift = int(input("Enter Number of Shifts: "))
 encryptedVal = encrypt(text, shift)
+encipherdData = open("./Encipher.txt", 'w')
+data = "Encipered Text:" + encryptedVal
+encipherdData.write(data)
 decryptedVal = decrypt(encryptedVal, shift)
 
 
@@ -33,7 +36,7 @@ print("original Text:", text)
 print("encrypted Text:", encryptedVal)
 print("decrypted Text:", decryptedVal)
 
-out = open("./Cipher.txt", 'w')
+out = open("./Decipher.txt", 'w')
 data = bruteForce(encryptedVal)
 
 for i in data:

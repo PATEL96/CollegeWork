@@ -67,35 +67,35 @@ def generateKeyTable(Key):
 
     return matrix
 
-def inSameCol(matrix, el1Row, el1Col, el2Row, el2Col):
+def inSameCol(matrix, el1Row, el1Col, el2Row, el2Col, rule=1):
     char1 = ''
     char2 = ''
     
     if el1Row == 5:
         char1 = matrix[0][el1Col]
     else:
-        char1 = matrix[el1Row + 1][el1Col]
+        char1 = matrix[el1Row + rule][el1Col]
 
     if el2Row == 5:
         char2 = matrix[0][el2Col]
     else:
-        char2 = matrix[el2Row + 1][el2Col]
+        char2 = matrix[el2Row + rule][el2Col]
         
     return char1, char2
 
-def inSameRow(matrix, el1Row, el1Col, el2Row, el2Col):
+def inSameRow(matrix, el1Row, el1Col, el2Row, el2Col, rule=1):
     char1 = ''
     char2 = ''
     
-    if el1Row == 5:
+    if el1Col == 5:
         char1 = matrix[el1Row][0]
     else:
-        char1 = matrix[el1Row][el1Col+1]
+        char1 = matrix[el1Row][el1Col+rule]
 
-    if el2Row == 5:
+    if el2Col == 5:
         char2 = matrix[el2Row][0]
     else:
-        char2 = matrix[el2Row][el2Col+1]
+        char2 = matrix[el2Row][el2Col+rule]
         
     return char1, char2
 
@@ -114,7 +114,7 @@ def search(matrix, data):
             if(matrix[i][j] == data):
                 return i, j
 
-def encryptPlayFair(plainText, Matrix):
+def encryptPlayFair(plainText, Matrix, Rule=1):
     cipherText = []
     
     for i in range(0, len(plainText)):
@@ -125,9 +125,9 @@ def encryptPlayFair(plainText, Matrix):
         el2_x, el2_y = search(Matrix, plainText[i][1])
         
         if el1_x == el2_x:
-            c1 ,c2 = inSameRow(Matrix, el1_x, el1_y, el2_x, el2_y)
+            c1 ,c2 = inSameRow(Matrix, el1_x, el1_y, el2_x, el2_y, Rule)
         elif el1_y == el2_y:
-            c1 ,c2 = inSameCol(Matrix, el1_x, el1_y, el2_x, el2_y)
+            c1 ,c2 = inSameCol(Matrix, el1_x, el1_y, el2_x, el2_y, Rule)
         else:
             c1 ,c2 = intersection(Matrix, el1_x, el1_y, el2_x, el2_y)
         
@@ -137,21 +137,36 @@ def encryptPlayFair(plainText, Matrix):
     return cipherText
 
 PlainText = open("./Plain.txt").read()
+Key = "PATEL96"
+print("PlainText:", PlainText)
+print("Key:", Key)
 PlainText = removeSpaces(PlainText)
 PlainText = setUpper(PlainText)
-print(PlainText)
 PlainText = makeParts(PlainText)
 PlainText = partInTwo(PlainText)
-print(PlainText)
-Key = "PATEL96"
+print("Separated PlainText:" ,PlainText)
 matrix = generateKeyTable(Key)
+
+print("=====>KEY MATRIX<=====")
+
 for i in range(6):
     print(matrix[i])
+    
+print("=====>KEY MATRIX<=====")
 
 cipherList = encryptPlayFair(PlainText, matrix)
 cipher = ""
 for i in range(len(cipherList)):
     cipher = cipher + cipherList[i]
-out = open("./Cipher.txt", 'w')
-out.write(cipher)
-print(cipher)
+out = open("./Encipher.txt", 'w')
+dataToWrite = "EncipheredData: " + cipher
+out.write(dataToWrite)
+print("CipherText:",cipher)
+
+test = encryptPlayFair(cipherList, matrix, -1)
+print("Decrypted Text:",test)
+dataToWrite = "DecipheredData: " + "".join(test[i] for i in range(len(test)))
+
+out = open("./Decipher.txt", 'w')
+out.write(dataToWrite)
+
