@@ -59,5 +59,5 @@ print("Cipher Text:", encipheredData)
 
 decipheredData = Decrypt(encipheredData, Keys)
 decipheredFile = open("./Decipher.txt", 'w')
-decipheredFile.write("Decryptes Data: " + decipheredData)
+decipheredFile.write("Decrypted Data: " + decipheredData)
 print("Plain Text:", decipheredData)
