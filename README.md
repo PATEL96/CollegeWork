@@ -29,6 +29,7 @@ Now edit any file you want!!!
  - [SEM3](https://github.com/PATEL96/CollegeWork/tree/master/SEM3)
  - [SEM4](https://github.com/PATEL96/CollegeWork/tree/master/SEM4)
  - [SEM5](https://github.com/PATEL96/CollegeWork/tree/master/SEM5)
+ - [SEM6](https://github.com/PATEL96/CollegeWork/tree/master/SEM6)
 
 
 ## Tech Stack
