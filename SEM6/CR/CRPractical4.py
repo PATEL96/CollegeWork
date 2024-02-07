@@ -1,6 +1,5 @@
 
-#? pip3 install flask
-#? pip3 install pycryptodome
+#? pip3 install flask pycryptodome
 from flask import Flask, render_template, request, redirect, url_for
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
