@@ -1,5 +1,8 @@
 #! Run below line in terminal before Running the Program(Only Once)
 #? pip install nltk
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
