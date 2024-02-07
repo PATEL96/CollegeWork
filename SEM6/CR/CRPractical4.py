@@ -47,7 +47,7 @@ def login():
 
     # In a real application, fetch the stored encrypted password for the given username.
     # Here, we'll simulate it with a hardcoded value.
-    stored_encrypted_password = encrypt_password('rajvandan12')
+    stored_encrypted_password = encrypt_password('rajvandan@12')
 
 
     if verify_password(stored_encrypted_password, input_password):
