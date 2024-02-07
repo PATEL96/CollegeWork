@@ -1,0 +1,11 @@
+Information retrieval is the process of obtaining relevant information
+from a collection of data or documents. It involves searching for and 
+retrieving specific information based on user queries or search terms. 
+In today's digital age, where vast amounts of information are available 
+at our fingertips, effective information retrieval systems are crucial 
+for finding accurate and reliable information quickly and efficiently. 
+Various techniques and algorithms have been developed to improve the 
+accuracy and speed of information retrieval, including keyword-based 
+searching, natural language processing, and machine learning. These 
+advancements have revolutionized the way we access and utilize information, 
+making it easier than ever to find the answers we need in a timely manner.
