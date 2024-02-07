@@ -1,6 +1,5 @@
 
-#? pip3 install flask
-#? pip3 install pycryptodome
+#? pip3 install flask pycryptodome
 from flask import Flask, render_template, request, redirect, url_for
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
@@ -47,7 +46,7 @@ def login():
 
     # In a real application, fetch the stored encrypted password for the given username.
     # Here, we'll simulate it with a hardcoded value.
-    stored_encrypted_password = encrypt_password('rajvandan12')
+    stored_encrypted_password = encrypt_password('rajvandan@12')
 
 
     if verify_password(stored_encrypted_password, input_password):
