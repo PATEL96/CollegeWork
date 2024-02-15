@@ -34,7 +34,7 @@ Now edit any file you want!!!
 
 ## Tech Stack
 
-**Learning Languages:** C/C++, Java, Python, HTML, CSS, JavaScript, PHP
+**Learning Languages:** C/C++, Java, Python, HTML, CSS, JavaScript, PHP, ReactJS, NodeJS, TypeScript
 
 ## Support
 
