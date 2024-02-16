@@ -1,8 +1,4 @@
-*.class
-*.out
-*.exe
-.env
-node_modulesv*.iml
+*.iml
 .gradle
 /local.properties
 /.idea/caches
