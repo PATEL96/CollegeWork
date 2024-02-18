@@ -2,7 +2,8 @@
 *.out
 *.exe
 .env
-node_modulesv*.iml
+node_modules
+*.iml
 .gradle
 /local.properties
 /.idea/caches
@@ -17,4 +18,3 @@ node_modulesv*.iml
 .externalNativeBuild
 .cxx
 local.properties
-.idea
