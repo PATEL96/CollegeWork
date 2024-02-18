@@ -17,3 +17,4 @@ node_modulesv*.iml
 .externalNativeBuild
 .cxx
 local.properties
+.idea
