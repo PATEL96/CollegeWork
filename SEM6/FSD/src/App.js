@@ -14,7 +14,7 @@ const App = () => {
       <Router basename='/'>
         <PracticalList />
         <Routes>
-          <Route exact path='/Home' element={<Home />} />
+          <Route exact path='/' element={<Home />} />
           <Route exact path='/Practical1' element={<FSDPractical1 />} />
           <Route exact path='/Practical2A' element={<FSDPractical2A />} />
           <Route exact path='/Practical2B' element={<FSDPractical2B />} />
