@@ -6,7 +6,7 @@ import PracticalList from './Practicals/PracticalList';
 import { FSDPractical1 } from './Practicals/FSDPractical1';
 import Home from './Practicals/Home';
 import FSDPractical5A from './Practicals/FSDPractical5A';
-import FSDPractical5B from './Practicals/FSDPreactical5B';
+import FSDPractical5B from './Practicals/FSDPractical5B';
 
 const App = () => {
   return(
