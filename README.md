@@ -30,11 +30,12 @@ Now edit any file you want!!!
  - [SEM4](https://github.com/PATEL96/CollegeWork/tree/main/SEM4)
  - [SEM5](https://github.com/PATEL96/CollegeWork/tree/main/SEM5)
  - [SEM6](https://github.com/PATEL96/CollegeWork/tree/main/SEM6)
+ - [SEM7](https://github.com/PATEL96/CollegeWork/tree/main/SEM7)
 
 
 ## Tech Stack
 
-**Learning Languages:** C/C++, Java, Python, HTML, CSS, JavaScript, PHP, ReactJS, NodeJS, TypeScript
+**Learning Languages:** C/C++, Java, Python, HTML, CSS, JavaScript, PHP, ReactJS, NodeJS, TypeScript, Solidity
 
 ## Support
 
