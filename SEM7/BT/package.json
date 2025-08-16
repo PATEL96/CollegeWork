@@ -9,7 +9,7 @@
   "private": false,
   "dependencies": {
     "@openzeppelin/contracts": "^5.4.0",
-    "hardhat": "^2.26.1"
+    "hardhat": "^3.0.0"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.0",
